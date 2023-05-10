@@ -70,7 +70,7 @@ if(isset($_GET['delete_all'])){
 
 <section class="heading">
     <h3>your wishlist</h3>
-    <p> <a href="home.php">home</a> / wishlist </p>
+    <p> <a href="home.php">Home</a> / Wishlist </p>
 </section>
 
 <section class="wishlist">
@@ -108,7 +108,7 @@ if(isset($_GET['delete_all'])){
     </div>
 
     <div class="wishlist-total">
-        <p>grand total : <span>$<?php echo $grand_total; ?>/-</span></p>
+        <p>Grand Total : <span>$<?php echo $grand_total; ?>/-</span></p>
         <a href="shop.php" class="option-btn">continue shopping</a>
         <a href="wishlist.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled' ?>" onclick="return confirm('delete all from wishlist?');">delete all</a>
     </div>

@@ -111,7 +111,7 @@ if(!isset($user_id)){
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>Chaya</h3>
+            <h3>Chhaya Abhishek Yadav</h3>
         </div>
 
         <div class="box">

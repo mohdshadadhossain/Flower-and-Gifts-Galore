@@ -65,12 +65,12 @@ if(isset($message)){
 
    <form action="" method="post">
       <h3>register now</h3>
-      <input type="text" name="name" class="box" placeholder="enter your username" required>
-      <input type="email" name="email" class="box" placeholder="enter your email" required>
-      <input type="password" name="pass" class="box" placeholder="enter your password" required>
-      <input type="password" name="cpass" class="box" placeholder="confirm your password" required>
-      <input type="submit" class="btn" name="submit" value="register now">
-      <p>already have an account? <a href="login.php">login now</a></p>
+      <input type="text" name="name" class="box" placeholder="Enter your username" required>
+      <input type="email" name="email" class="box" placeholder="Enter your email" required>
+      <input type="password" name="pass" class="box" placeholder="Enter your password" required>
+      <input type="password" name="cpass" class="box" placeholder="Confirm your password" required>
+      <input type="submit" class="btn" name="submit" value="Register now">
+      <p>already have an account? <a href="login.php">Log in</a></p>
    </form>
 
 </section>
