@@ -41,7 +41,7 @@ if(!isset($user_id)){
     <div class="flex">
 
         <div class="image">
-            <img src="images/about-img-1.png" alt="">
+            <img src="images/newimg1.jpg" alt="">
         </div>
 
         <div class="content">
@@ -61,7 +61,7 @@ if(!isset($user_id)){
         </div>
 
         <div class="image">
-            <img src="images/about-img-2.jpg" alt="">
+            <img src="images/newimg2.jpg" alt="">
         </div>
 
     </div>
@@ -69,7 +69,7 @@ if(!isset($user_id)){
     <div class="flex">
 
         <div class="image">
-            <img src="images/about-img-3.jpg" alt="">
+            <img src="images/newimg3.jpg" alt="">
         </div>
 
         <div class="content">
@@ -102,7 +102,7 @@ if(!isset($user_id)){
         </div>
 
         <div class="box">
-            <img src="images/pic-2.png" alt="">
+            <img src="images/pic-2.jpg" alt="">
             <p>I ordered a gift basket for my best friend's wedding and it was a huge hit. The items were beautifully presented.</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
