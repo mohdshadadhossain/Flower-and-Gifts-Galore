@@ -83,7 +83,7 @@ if(isset($_POST['add_to_cart'])){
 
    <div class="content">
       <h3>new collections</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime reiciendis, modi placeat sit cumque molestiae.</p>
+      <p>New Content to be added here</p>
       <a href="about.php" class="btn">discover more</a>
    </div>
 
