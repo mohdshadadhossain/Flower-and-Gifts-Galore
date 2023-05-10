@@ -4,38 +4,38 @@
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="home.php">home</a>
-            <a href="about.php">about</a>
-            <a href="contact.php">contact</a>
-            <a href="shop.php">shop</a>
+            <a href="home.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="contact.php">Contact</a>
+            <a href="shop.php">Shop</a>
         </div>
 
         <div class="box">
             <h3>extra links</h3>
-            <a href="login.php">login</a>
-            <a href="register.php">register</a>
-            <a href="orders.php">my orders</a>
-            <a href="cart.php">my cart</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+            <a href="orders.php">My Orders</a>
+            <a href="cart.php">My Cart</a>
         </div>
 
         <div class="box">
             <h3>contact info</h3>
-            <p> <i class="fas fa-phone"></i> +123-456-7890 </p>
-            <p> <i class="fas fa-phone"></i> +111-222-3333 </p>
-            <p> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </p>
-            <p> <i class="fas fa-map-marker-alt"></i> mumbai, india - 123-456 </p>
+            <p> <i class="fas fa-phone"></i> 01332 590500 </p>
+            <p> <i class="fas fa-phone"></i> 01332 590500 </p>
+            <p> <i class="fas fa-envelope"></i> Team12@unimail.derby.ac.uk </p>
+            <p> <i class="fas fa-map-marker-alt"></i> Derby University, Derby DE22 1GB </p>
         </div>
 
         <div class="box">
             <h3>follow us</h3>
-            <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
-            <a href="#"><i class="fab fa-twitter"></i>twitter</a>
-            <a href="#"><i class="fab fa-instagram"></i>instagram</a>
-            <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i>Facebook</a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i>Linkedin</a>
         </div>
 
     </div>
 
-    <div class="credit">&copy; copyright @ <?php echo date('Y'); ?> by <span>mr. web designer</span> </div>
+    <div class="credit">&copy; Copyright @ <?php echo date('Y'); ?> by <span>Team 12</span> </div>
 
 </section>

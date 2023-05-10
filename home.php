@@ -82,8 +82,8 @@ if(isset($_POST['add_to_cart'])){
 <section class="home">
 
    <div class="content">
-      <h3>new collections</h3>
-      <p>New Content to be added here</p>
+      <h3>Luxury Flowers</h3>
+      <p>Make their day special with a handcrafted bouquet. Bring the summer sunshine with our favourite British blooms. </p>
       <a href="about.php" class="btn">discover more</a>
    </div>
 
@@ -131,8 +131,8 @@ if(isset($_POST['add_to_cart'])){
 <section class="home-contact">
 
    <div class="content">
-      <h3>have any questions?</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio officia aliquam quis saepe? Quia, libero.</p>
+      <h3>Have any questions?</h3>
+      <p>We're here to help with any inquiries related to our flowers, services, and website. Our friendly customer support team can assist with choosing the perfect bouquet, delivery or pricing questions. Contact us through our website or phone, and we'll provide the necessary information and assistance.</p>
       <a href="contact.php" class="btn">contact us</a>
    </div>
 
