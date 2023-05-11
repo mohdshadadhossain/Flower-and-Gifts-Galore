@@ -80,8 +80,8 @@ if(isset($_POST['add_to_cart'])){
 <?php @include 'header.php'; ?>
 
 <section class="heading">
-    <h3>our shop</h3>
-    <p> <a href="home.php">home</a> / shop </p>
+    <h3>Flowers & Gifts</h3>
+    <p> <a href="home.php">Home</a> / Flowers & Gifts </p>
 </section>
 
 <section class="products">
