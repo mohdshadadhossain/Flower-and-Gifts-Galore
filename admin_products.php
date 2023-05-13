@@ -77,9 +77,9 @@ if(isset($_GET['delete'])){
 
    <form action="" method="POST" enctype="multipart/form-data">
       <h3>add new product</h3>
-      <input type="text" class="box" required placeholder="enter product name" name="name">
-      <input type="number" min="0" class="box" required placeholder="enter product price" name="price">
-      <textarea name="details" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
+      <input type="text" class="box" required placeholder="Enter product name" name="name">
+      <input type="number" min="0" class="box" required placeholder="Enter product price" name="price">
+      <textarea name="details" class="box" required placeholder="Enter product details" cols="30" rows="10"></textarea>
       <input type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
