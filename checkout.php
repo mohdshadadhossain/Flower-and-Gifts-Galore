@@ -99,49 +99,49 @@ if(isset($_POST['order'])){
 
         <div class="flex">
             <div class="inputBox">
-                <span>Your name :</span>
-                <input type="text" name="name" placeholder="Enter your name">
+                <span>your name :</span>
+                <input type="text" name="name" placeholder="enter your name">
             </div>
             <div class="inputBox">
-                <span>Your number :</span>
-                <input type="number" name="number" min="0" placeholder="Enter your number">
+                <span>your number :</span>
+                <input type="number" name="number" min="0" placeholder="enter your number">
             </div>
             <div class="inputBox">
-                <span>Your email :</span>
-                <input type="email" name="email" placeholder="Enter your email">
+                <span>your email :</span>
+                <input type="email" name="email" placeholder="enter your email">
             </div>
             <div class="inputBox">
-                <span>Payment method :</span>
+                <span>payment method :</span>
                 <select name="method">
-                    <option value="cash on delivery">Cash on Delivery</option>
-                    <option value="credit card">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="paytm">PayTm</option>
+                    <option value="cash on delivery">cash on delivery</option>
+                    <option value="credit card">credit card</option>
+                    <option value="paypal">paypal</option>
+                    <option value="paytm">paytm</option>
                 </select>
             </div>
             <div class="inputBox">
-                <span>Address line 01 :</span>
+                <span>address line 01 :</span>
                 <input type="text" name="flat" placeholder="e.g. flat no.">
             </div>
             <div class="inputBox">
-                <span>Address line 02 :</span>
-                <input type="text" name="Street" placeholder="e.g.  street name">
+                <span>address line 02 :</span>
+                <input type="text" name="street" placeholder="e.g.  streen name">
             </div>
             <div class="inputBox">
-                <span>City :</span>
-                <input type="text" name="City" placeholder="e.g. Derby">
+                <span>city :</span>
+                <input type="text" name="city" placeholder="e.g. mumbai">
             </div>
             <div class="inputBox">
                 <span>state :</span>
-                <input type="text" name="state" placeholder="e.g. Derbyshire">
+                <input type="text" name="state" placeholder="e.g. maharashtra">
             </div>
             <div class="inputBox">
-                <span>Country :</span>
-                <input type="text" name="country" placeholder="e.g. United Kingdom">
+                <span>country :</span>
+                <input type="text" name="country" placeholder="e.g. india">
             </div>
             <div class="inputBox">
-                <span>Postal code :</span>
-                <input type="number" min="0" name="pin_code" placeholder="e.g. DE23 8QJ">
+                <span>pin code :</span>
+                <input type="number" min="0" name="pin_code" placeholder="e.g. 123456">
             </div>
         </div>
 
