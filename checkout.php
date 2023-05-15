@@ -125,6 +125,7 @@ if(isset($_POST['order'])){
 
         <div class="flex">
             <div class="inputBox">
+<<<<<<< HEAD
                 <span>Your name :</span>
                 <input type="text" name="name" placeholder="Enter your name !" required>
             </div>
@@ -168,6 +169,51 @@ if(isset($_POST['order'])){
             <div class="inputBox">
                 <span>Postal code :</span>
                 <input type="text" max='10' name="pin_code" placeholder="e.g. DE23 8QJ !" required>
+=======
+                <span>your name :</span>
+                <input type="text" name="name" placeholder="enter your name">
+            </div>
+            <div class="inputBox">
+                <span>your number :</span>
+                <input type="number" name="number" min="0" placeholder="enter your number">
+            </div>
+            <div class="inputBox">
+                <span>your email :</span>
+                <input type="email" name="email" placeholder="enter your email">
+            </div>
+            <div class="inputBox">
+                <span>payment method :</span>
+                <select name="method">
+                    <option value="cash on delivery">cash on delivery</option>
+                    <option value="credit card">credit card</option>
+                    <option value="paypal">paypal</option>
+                    <option value="paytm">paytm</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>address line 01 :</span>
+                <input type="text" name="flat" placeholder="e.g. flat no.">
+            </div>
+            <div class="inputBox">
+                <span>address line 02 :</span>
+                <input type="text" name="street" placeholder="e.g.  streen name">
+            </div>
+            <div class="inputBox">
+                <span>city :</span>
+                <input type="text" name="city" placeholder="e.g. mumbai">
+            </div>
+            <div class="inputBox">
+                <span>state :</span>
+                <input type="text" name="state" placeholder="e.g. maharashtra">
+            </div>
+            <div class="inputBox">
+                <span>country :</span>
+                <input type="text" name="country" placeholder="e.g. india">
+            </div>
+            <div class="inputBox">
+                <span>pin code :</span>
+                <input type="number" min="0" name="pin_code" placeholder="e.g. 123456">
+>>>>>>> aff1c2409b8f64c06fb9df6e3d2b6bb5616395db
             </div>
         </div>
 
