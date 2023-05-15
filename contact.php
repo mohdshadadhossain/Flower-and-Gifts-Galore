@@ -20,10 +20,10 @@ if(isset($_POST['send'])){
     $select_message = mysqli_query($conn, "SELECT * FROM `message` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
 
     if(mysqli_num_rows($select_message) > 0){
-        $message[] = 'message sent already!';
+        $message[] = "<span style='color:red;'>Message Sent Already !</span>";
     }else{
         mysqli_query($conn, "INSERT INTO `message`(user_id, name, email, number, message) VALUES('$user_id', '$name', '$email', '$number', '$msg')") or die('query failed');
-        $message[] = 'message sent successfully!';
+        $message[] = "<span style='color:green;'>Message Sent Successfully !</span>";
     }
 
 }
@@ -58,10 +58,10 @@ if(isset($_POST['send'])){
 
     <form action="" method="POST">
         <h3>send us message!</h3>
-        <input type="text" name="name" placeholder="Enter your name" class="box" required> 
-        <input type="email" name="email" placeholder="Enter your email" class="box" required>
-        <input type="number" name="number" placeholder="Enter your number" class="box" required>
-        <textarea name="message" class="box" placeholder="Enter your message" required cols="30" rows="10"></textarea>
+        <input type="text" name="name" placeholder="Enter your name !" class="box" required> 
+        <input type="email" name="email" placeholder="Enter your email !" class="box" required>
+        <input type="number" name="number" placeholder="Enter your number !" class="box" required>
+        <textarea name="message" class="box" placeholder="Enter your message !" required cols="30" rows="10"></textarea>
         <input type="submit" value="send message" name="send" class="btn">
     </form>
 

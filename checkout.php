@@ -36,13 +36,39 @@ if(isset($_POST['order'])){
     $order_query = mysqli_query($conn, "SELECT * FROM `orders` WHERE name = '$name' AND number = '$number' AND email = '$email' AND method = '$method' AND address = '$address' AND total_products = '$total_products' AND total_price = '$cart_total'") or die('query failed');
 
     if($cart_total == 0){
-        $message[] = 'your cart is empty!';
+        $message[] = "<span style='color:green;'>Your Cart is Empty !</span>";
     }elseif(mysqli_num_rows($order_query) > 0){
-        $message[] = 'order placed already!';
+        $message[] = "<span style='color:red;'>Your Order Placed Already !</span>";
     }else{
         mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
         mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-        $message[] = 'order placed successfully!';
+        $message[] = "<span style='color:green;'>Your Order Placed Successfully !</span>";
+
+        // SMS Integration
+        // Account details
+        $apiKey = urlencode('NTY3NTZmNzk0YjMxNzk0MTRiNjczNjQ2MzM0YjY4NmM=');
+        
+        // Message details
+        $numbers = array($number);
+        $sender = urlencode('cpy1495@gmail.com');
+        $message = rawurlencode('Your Flowers and Gifts Order Placed Successfully !');
+    
+        $numbers = implode(',', $numbers);
+    
+        // Prepare data for POST request
+        $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+    
+        // Send the POST request with cURL
+        $ch = curl_init('https://api.txtlocal.com/send/');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        // Process your response here
+        echo $response;
+
     }
 }
 
@@ -85,34 +111,34 @@ if(isset($_POST['order'])){
     <?php
         }
         }else{
-            echo '<p class="empty">your cart is empty</p>';
+            echo "<p class='empty'><span style='color:red;'>Your cart is empty</p></span>";
         }
     ?>
-    <div class="grand-total">grand total : <span>$<?php echo $grand_total; ?>/-</span></div>
+    <div class="grand-total">grand Total : <span>$<?php echo $grand_total; ?>/-</span></div>
 </section>
 
 <section class="checkout">
 
     <form action="" method="POST">
 
-        <h3>place your order</h3>
+        <h3>Place Your Order</h3>
 
         <div class="flex">
             <div class="inputBox">
                 <span>Your name :</span>
-                <input type="text" name="name" placeholder="Enter your name">
+                <input type="text" name="name" placeholder="Enter your name !" required>
             </div>
             <div class="inputBox">
                 <span>Your number :</span>
-                <input type="number" name="number" min="0" placeholder="Enter your number">
+                <input type="number" name="number" min="0" placeholder="Enter your number !" required>
             </div>
             <div class="inputBox">
                 <span>Your email :</span>
-                <input type="email" name="email" placeholder="Enter your email">
+                <input type="email" name="email" placeholder="Enter your email !" required>
             </div>
             <div class="inputBox">
                 <span>Payment method :</span>
-                <select name="method">
+                <select name="method" required>
                     <option value="cash on delivery">Cash on Delivery</option>
                     <option value="credit card">Credit Card</option>
                     <option value="paypal">PayPal</option>
@@ -121,27 +147,27 @@ if(isset($_POST['order'])){
             </div>
             <div class="inputBox">
                 <span>Address line 01 :</span>
-                <input type="text" name="flat" placeholder="e.g. flat no.">
+                <input type="text" name="flat" placeholder="e.g. flat no. !" required>
             </div>
             <div class="inputBox">
                 <span>Address line 02 :</span>
-                <input type="text" name="Street" placeholder="e.g.  street name">
+                <input type="text" name="street" placeholder="e.g.  street name !" required>
             </div>
             <div class="inputBox">
                 <span>City :</span>
-                <input type="text" name="City" placeholder="e.g. Derby">
+                <input type="text" name="city" max='50' placeholder="e.g. Derby !" required>
             </div>
             <div class="inputBox">
-                <span>state :</span>
-                <input type="text" name="state" placeholder="e.g. Derbyshire">
+                <span>State :</span>
+                <input type="text" name="state" max='50' placeholder="e.g. Derbyshire !" required>
             </div>
             <div class="inputBox">
                 <span>Country :</span>
-                <input type="text" name="country" placeholder="e.g. United Kingdom">
+                <input type="text" name="country" max='50' placeholder="e.g. United Kingdom !" required>
             </div>
             <div class="inputBox">
                 <span>Postal code :</span>
-                <input type="number" min="0" name="pin_code" placeholder="e.g. DE23 8QJ">
+                <input type="text" max='10' name="pin_code" placeholder="e.g. DE23 8QJ !" required>
             </div>
         </div>
 

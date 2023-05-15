@@ -80,13 +80,13 @@ if(isset($_POST['update_product'])){
    <textarea name="details" class="box" required placeholder="update product details" cols="30" rows="10"><?php echo $fetch_products['details']; ?></textarea>
    <input type="file" accept="image/jpg, image/jpeg, image/png" class="box" name="image">
    <input type="submit" value="update product" name="update_product" class="btn">
-   <a href="admin_products.php" class="option-btn">go back</a>
+   <a href="admin_products.php" class="option-btn">Go Back</a>
 </form>
 
 <?php
       }
    }else{
-      echo '<p class="empty">no update product select</p>';
+      echo '<p class="empty">No Update Product Select</p>';
    }
 ?>
 

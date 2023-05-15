@@ -79,7 +79,7 @@ if(isset($_POST['add_to_cart'])){
    
 <?php @include 'header.php'; ?>
 
-<section class="home">
+<!-- <section class="home">
 
    <div class="content">
       <h3>Luxury Flowers</h3>
@@ -87,7 +87,72 @@ if(isset($_POST['add_to_cart'])){
       <a href="about.php" class="btn">discover more</a>
    </div>
 
-</section>
+</section> -->
+<!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="images/bg-flower.jpg" width="1390" height="400" >
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="images/slider-1.jpg" width="1390" height="400">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="images/slider-2.jpg" width="1390" height="400">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="images/slider-3.jpg" width="1390" height="400">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="images/slider-5.jpg" width="1390" height="400">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="images/slider-6.jpg"  width="1390" height="400">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/bg-flower.jpg" width="100" height="80" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider-1.jpg" width="100" height="80" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider-2.jpg" width="100" height="80" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider-3.jpg" width="100" height="80" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider-5.jpg" width="100" height="80" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider-6.jpg" width="100" height="80" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+  </div>
+</div>
 
 <section class="products">
 
@@ -102,7 +167,7 @@ if(isset($_POST['add_to_cart'])){
       ?>
       <form action="" method="POST" class="box">
          <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fas fa-eye"></a>
-         <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+         <div class="price">&#65505;<?php echo $fetch_products['price']; ?>/-</div>
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="" class="image">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <input type="number" name="product_quantity" value="1" min="0" class="qty">
@@ -144,6 +209,38 @@ if(isset($_POST['add_to_cart'])){
 <?php @include 'footer.php'; ?>
 
 <script src="js/script.js"></script>
+<script>
+   let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 </body>
 </html>

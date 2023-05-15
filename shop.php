@@ -22,12 +22,12 @@ if(isset($_POST['add_to_wishlist'])){
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
     if(mysqli_num_rows($check_wishlist_numbers) > 0){
-        $message[] = 'already added to wishlist';
+        $message[] = "<span style='color:green;'>Already Added to Wishlist</span>";
     }elseif(mysqli_num_rows($check_cart_numbers) > 0){
-        $message[] = 'already added to cart';
+        $message[] = "<span style='color:red;'>Already Added to Cart</span>";
     }else{
         mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
-        $message[] = 'product added to wishlist';
+        $message[] = "<span style='color:green;'>Product Added to Wishlist</span>";
     }
 
 }
@@ -43,7 +43,7 @@ if(isset($_POST['add_to_cart'])){
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
     if(mysqli_num_rows($check_cart_numbers) > 0){
-        $message[] = 'already added to cart';
+        $message[] = "<span style='color:red;'>Already Added to Cart</span>";
     }else{
 
         $check_wishlist_numbers = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
@@ -53,7 +53,7 @@ if(isset($_POST['add_to_cart'])){
         }
 
         mysqli_query($conn, "INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-        $message[] = 'product added to cart';
+        $message[] = "<span style='color:green;'>Product Added to Cart</span>";
     }
 
 }
@@ -86,7 +86,7 @@ if(isset($_POST['add_to_cart'])){
 
 <section class="products">
 
-   <h1 class="title">latest products</h1>
+   <h1 class="title">Latest Products</h1>
 
    <div class="box-container">
 
@@ -97,7 +97,7 @@ if(isset($_POST['add_to_cart'])){
       ?>
       <form action="" method="POST" class="box">
          <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fas fa-eye"></a>
-         <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+         <div class="price">&#65505;<?php echo $fetch_products['price']; ?>/-</div>
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="" class="image">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <input type="number" name="product_quantity" value="1" min="0" class="qty">
@@ -111,7 +111,7 @@ if(isset($_POST['add_to_cart'])){
       <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo "<p class='empty'><span style='color:red;'>No Products Added Yet !</p>";
       }
       ?>
 

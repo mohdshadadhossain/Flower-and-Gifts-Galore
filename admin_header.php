@@ -31,10 +31,10 @@ if(isset($message)){
       </div>
 
       <div class="account-box">
-         <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
-         <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
-         <a href="logout.php" class="delete-btn">logout</a>
-         <div>new <a href="login.php">login</a> | <a href="register.php">register</a> </div>
+         <p>Username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
+         <p>Email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
+         <a href="logout.php" class="delete-btn">Logout</a>
+         <div>New <a href="login.php">Sign In</a> | <a href="register.php">Sign Up</a> </div>
       </div>
 
    </div>

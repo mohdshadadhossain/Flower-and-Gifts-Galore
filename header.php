@@ -24,12 +24,14 @@ if (isset($message)) {
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="shop.php">Flower & Gifts</a></li>
                 <li><a href="orders.php">Orders</a></li>
+                <?php if($_SESSION['user_name'] ==''){ ?>
                 <li><a href="#">Account</a>
                     <ul>
                         <li><a href="login.php">Login</a></li>
                         <li><a href="register.php">Register</a></li>
                     </ul>
                 </li>
+                <?php } ?>
             </ul>
         </nav>
 
@@ -54,15 +56,12 @@ if (isset($message)) {
         </div>
 
         <div class="account-box">
-            <p>username : <span>
-                    <?php echo $_SESSION['user_name']; ?>
-                </span></p>
-            <p>email : <span>
-                    <?php echo $_SESSION['user_email']; ?>
-                </span></p>
-            <a href="logout.php" class="delete-btn">logout</a>
+            <table class="table">
+                <tr><th><span style="font-size:1.0rem;">Username :</span></th><td> <?php echo $_SESSION['user_name']; ?></td></tr>
+                <tr><th>Email-Id :</th><td> <?php echo $_SESSION['user_email']; ?></td></tr>
+            </table>
+            <span style="margin-left:0px;"><a href="logout.php" class="delete-btn" >logout</a></span>
         </div>
-
     </div>
 
 </header>

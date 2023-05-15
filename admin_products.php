@@ -77,9 +77,9 @@ if(isset($_GET['delete'])){
 
    <form action="" method="POST" enctype="multipart/form-data">
       <h3>add new product</h3>
-      <input type="text" class="box" required placeholder="Enter product name" name="name">
-      <input type="number" min="0" class="box" required placeholder="Enter product price" name="price">
-      <textarea name="details" class="box" required placeholder="Enter product details" cols="30" rows="10"></textarea>
+      <input type="text" class="box" required placeholder="Enter Product Name !" name="name">
+      <input type="number" min="0" class="box" required placeholder="Enter Product Price !" name="price">
+      <textarea name="details" class="box" required placeholder="Enter Product Details !" cols="30" rows="10"></textarea>
       <input type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
@@ -96,7 +96,7 @@ if(isset($_GET['delete'])){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
       <div class="box">
-         <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+         <div class="price">&#65505;<?php echo $fetch_products['price']; ?>/-</div>
          <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="details"><?php echo $fetch_products['details']; ?></div>
@@ -106,7 +106,7 @@ if(isset($_GET['delete'])){
       <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo '<p class="empty">No Products Added Yet !</p>';
       }
       ?>
    </div>

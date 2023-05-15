@@ -49,12 +49,12 @@ if(isset($_GET['delete'])){
           while($fetch_message = mysqli_fetch_assoc($select_message)){
       ?>
       <div class="box">
-         <p>user id : <span><?php echo $fetch_message['user_id']; ?></span> </p>
-         <p>name : <span><?php echo $fetch_message['name']; ?></span> </p>
-         <p>number : <span><?php echo $fetch_message['number']; ?></span> </p>
-         <p>email : <span><?php echo $fetch_message['email']; ?></span> </p>
-         <p>message : <span><?php echo $fetch_message['message']; ?></span> </p>
-         <a href="admin_contacts.php?delete=<?php echo $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
+         <p>User Id : <span><?php echo $fetch_message['user_id']; ?></span> </p>
+         <p>Name : <span><?php echo $fetch_message['name']; ?></span> </p>
+         <p>Number : <span><?php echo $fetch_message['number']; ?></span> </p>
+         <p>Email : <span><?php echo $fetch_message['email']; ?></span> </p>
+         <p>Message : <span><?php echo $fetch_message['message']; ?></span> </p>
+         <a href="admin_contacts.php?delete=<?php echo $fetch_message['id']; ?>" onclick="return confirm('Are you Sure You Want to Delete This Message?');" class="delete-btn">delete</a>
       </div>
       <?php
          }

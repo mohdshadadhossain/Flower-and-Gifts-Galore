@@ -31,7 +31,7 @@ if(isset($_POST['add_to_cart'])){
         }
 
         mysqli_query($conn, "INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-        $message[] = 'product added to cart';
+        $message[] = 'Product Added to Cart';
     }
 
 }
@@ -75,7 +75,7 @@ if(isset($_GET['delete_all'])){
 
 <section class="wishlist">
 
-    <h1 class="title">products added</h1>
+    <h1 class="title">Products Added</h1>
 
     <div class="box-container">
 
@@ -90,7 +90,7 @@ if(isset($_GET['delete_all'])){
         <a href="view_page.php?pid=<?php echo $fetch_wishlist['pid']; ?>" class="fas fa-eye"></a>
         <img src="uploaded_img/<?php echo $fetch_wishlist['image']; ?>" alt="" class="image">
         <div class="name"><?php echo $fetch_wishlist['name']; ?></div>
-        <div class="price">$<?php echo $fetch_wishlist['price']; ?>/-</div>
+        <div class="price">&#65505;<?php echo $fetch_wishlist['price']; ?>/-</div>
         <input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['pid']; ?>">
         <input type="hidden" name="product_name" value="<?php echo $fetch_wishlist['name']; ?>">
         <input type="hidden" name="product_price" value="<?php echo $fetch_wishlist['price']; ?>">
@@ -102,14 +102,14 @@ if(isset($_GET['delete_all'])){
     $grand_total += $fetch_wishlist['price'];
         }
     }else{
-        echo '<p class="empty">your wishlist is empty</p>';
+        echo "<p class='empty'><span style='color:red;'>Your Wishlist is Empty</p>";
     }
     ?>
     </div>
 
     <div class="wishlist-total">
-        <p>Grand Total : <span>$<?php echo $grand_total; ?>/-</span></p>
-        <a href="shop.php" class="option-btn">continue shopping</a>
+        <p>Grand Total : <span>&#65505;<?php echo $grand_total; ?>/-</span></p>
+        <a href="shop.php" class="option-btn">Continue Shopping</a>
         <a href="wishlist.php?delete_all" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled' ?>" onclick="return confirm('delete all from wishlist?');">delete all</a>
     </div>
 
