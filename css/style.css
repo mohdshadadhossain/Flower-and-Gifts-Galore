@@ -347,7 +347,7 @@ section{
 
 .home{
    min-height: 60vh;
-  /* background:url(../images/bg-flower.jpg) no-repeat;*/
+   background:url(../images/bg-flower.jpg) no-repeat;
    background-size: cover;
    background-position: center;
    display: flex;
