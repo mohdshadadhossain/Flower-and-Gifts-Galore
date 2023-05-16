@@ -36,39 +36,13 @@ if(isset($_POST['order'])){
     $order_query = mysqli_query($conn, "SELECT * FROM `orders` WHERE name = '$name' AND number = '$number' AND email = '$email' AND method = '$method' AND address = '$address' AND total_products = '$total_products' AND total_price = '$cart_total'") or die('query failed');
 
     if($cart_total == 0){
-        $message[] = "<span style='color:green;'>Your Cart is Empty !</span>";
+        $message[] = 'your cart is empty!';
     }elseif(mysqli_num_rows($order_query) > 0){
-        $message[] = "<span style='color:red;'>Your Order Placed Already !</span>";
+        $message[] = 'order placed already!';
     }else{
         mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
         mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-        $message[] = "<span style='color:green;'>Your Order Placed Successfully !</span>";
-
-        // SMS Integration
-        // Account details
-        $apiKey = urlencode('NTY3NTZmNzk0YjMxNzk0MTRiNjczNjQ2MzM0YjY4NmM=');
-        
-        // Message details
-        $numbers = array($number);
-        $sender = urlencode('cpy1495@gmail.com');
-        $message = rawurlencode('Your Flowers and Gifts Order Placed Successfully !');
-    
-        $numbers = implode(',', $numbers);
-    
-        // Prepare data for POST request
-        $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-    
-        // Send the POST request with cURL
-        $ch = curl_init('https://api.txtlocal.com/send/');
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        
-        // Process your response here
-        echo $response;
-
+        $message[] = 'order placed successfully!';
     }
 }
 
@@ -111,109 +85,63 @@ if(isset($_POST['order'])){
     <?php
         }
         }else{
-            echo "<p class='empty'><span style='color:red;'>Your cart is empty</p></span>";
+            echo '<p class="empty">your cart is empty</p>';
         }
     ?>
-    <div class="grand-total">grand Total : <span>$<?php echo $grand_total; ?>/-</span></div>
+    <div class="grand-total">grand total : <span>$<?php echo $grand_total; ?>/-</span></div>
 </section>
 
 <section class="checkout">
 
     <form action="" method="POST">
 
-        <h3>Place Your Order</h3>
+        <h3>place your order</h3>
 
         <div class="flex">
             <div class="inputBox">
-<<<<<<< HEAD
-                <span>Your name :</span>
-                <input type="text" name="name" placeholder="Enter your name !" required>
+                <span>Your Name :</span>
+                <input type="text" name="name" placeholder="Enter your name">
             </div>
             <div class="inputBox">
-                <span>Your number :</span>
-                <input type="number" name="number" min="0" placeholder="Enter your number !" required>
+                <span>Your Number :</span>
+                <input type="number" name="number" min="0" placeholder="Enter your number">
             </div>
             <div class="inputBox">
-                <span>Your email :</span>
-                <input type="email" name="email" placeholder="Enter your email !" required>
-            </div>
-            <div class="inputBox">
-                <span>Payment method :</span>
-                <select name="method" required>
-                    <option value="cash on delivery">Cash on Delivery</option>
-                    <option value="credit card">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="paytm">PayTm</option>
-                </select>
-            </div>
-            <div class="inputBox">
-                <span>Address line 01 :</span>
-                <input type="text" name="flat" placeholder="e.g. flat no. !" required>
-            </div>
-            <div class="inputBox">
-                <span>Address line 02 :</span>
-                <input type="text" name="street" placeholder="e.g.  street name !" required>
-            </div>
-            <div class="inputBox">
-                <span>City :</span>
-                <input type="text" name="city" max='50' placeholder="e.g. Derby !" required>
-            </div>
-            <div class="inputBox">
-                <span>State :</span>
-                <input type="text" name="state" max='50' placeholder="e.g. Derbyshire !" required>
-            </div>
-            <div class="inputBox">
-                <span>Country :</span>
-                <input type="text" name="country" max='50' placeholder="e.g. United Kingdom !" required>
-            </div>
-            <div class="inputBox">
-                <span>Postal code :</span>
-                <input type="text" max='10' name="pin_code" placeholder="e.g. DE23 8QJ !" required>
-=======
-                <span>your name :</span>
-                <input type="text" name="name" placeholder="enter your name">
-            </div>
-            <div class="inputBox">
-                <span>your number :</span>
-                <input type="number" name="number" min="0" placeholder="enter your number">
-            </div>
-            <div class="inputBox">
-                <span>your email :</span>
-                <input type="email" name="email" placeholder="enter your email">
+                <span>Your Email :</span>
+                <input type="email" name="email" placeholder="Enter your email">
             </div>
             <div class="inputBox">
                 <span>payment method :</span>
                 <select name="method">
-                    <option value="cash on delivery">cash on delivery</option>
-                    <option value="credit card">credit card</option>
-                    <option value="paypal">paypal</option>
-                    <option value="paytm">paytm</option>
+                    <option value="cash on delivery">Cash on delivery</option>
+                    <option value="credit card">Credit card</option>
+                    <option value="paypal">Paypal</option>
+    
                 </select>
             </div>
             <div class="inputBox">
                 <span>address line 01 :</span>
-                <input type="text" name="flat" placeholder="e.g. flat no.">
+                <input type="text" name="flat" placeholder="e.g. Flat no.">
             </div>
             <div class="inputBox">
                 <span>address line 02 :</span>
-                <input type="text" name="street" placeholder="e.g.  streen name">
+                <input type="text" name="street" placeholder="e.g.  Street name">
             </div>
             <div class="inputBox">
                 <span>city :</span>
-                <input type="text" name="city" placeholder="e.g. mumbai">
+                <input type="text" name="city" placeholder="e.g. Derby">
             </div>
             <div class="inputBox">
                 <span>state :</span>
-                <input type="text" name="state" placeholder="e.g. maharashtra">
+                <input type="text" name="state" placeholder="e.g. Derbyshire">
             </div>
             <div class="inputBox">
                 <span>country :</span>
-                <input type="text" name="country" placeholder="e.g. india">
+                <input type="text" name="country" placeholder="e.g. United Kingdom">
             </div>
             <div class="inputBox">
                 <span>pin code :</span>
-                <input type="number" min="0" name="pin_code" placeholder="e.g. 123456">
->>>>>>> aff1c2409b8f64c06fb9df6e3d2b6bb5616395db
+                <input type="text" min="10" name="pin_code" placeholder="e.g. DE238QJ">
             </div>
         </div>
 
